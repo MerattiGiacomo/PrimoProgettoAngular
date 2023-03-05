@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-button.component.css']
 })
 export class MyButtonComponent {
-
+    disabilita = false;
+    onClickDisable(){
+        this.disabilita = true;
+    }
 }
