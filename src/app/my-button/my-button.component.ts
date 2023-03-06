@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-button',
@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-button.component.css']
 })
 export class MyButtonComponent {
-    disabilita = false;
-    onClickDisable(){
-        this.disabilita = true;
+    @Input() disabilita: boolean = false;
+    @Output() clickEvent: EventEmitter<any> = new EventEmitter();
+    dis= false;
+    onClickDisable() : void{
+      this.clickEvent.emit("save");
+      this.dis = this.disabilita;
     }
 }
